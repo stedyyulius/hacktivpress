@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const Users = require('../Controllers/user-controllers')
-const Blogs = require('../Controllers/blog-controllers')
+const Users = require('../Controllers/user-controllers.js')
+const Blogs = require('../Controllers/blog-controllers.js')
 
-/* GET home page. */
-router.post('/users/signup',Users.signup)
-router.post('/users/login',Users.login)
+
+router.post('/user/signup',Users.signup)
+router.post('/user/login',Users.login)
+router.get('/user/list',Users.listUsers)
 
 router.get('/list',Blogs.listBlogs)
 router.get('/:id',Blogs.getOneBlog)

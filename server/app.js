@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const cors = require('cors')
 const mongoose = require('mongoose')
-const uri = 'mongodb://article:article@ds127892.mlab.com:27892/wordpress'
+const uri = 'mongodb://hacktiv:hacktiv@ds127872.mlab.com:27872/hacktivpress'
 mongoose.connect(uri)
 var db = mongoose.createConnection(uri)
 var index = require('./routes/index');

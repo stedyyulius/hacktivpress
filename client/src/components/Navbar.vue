@@ -96,12 +96,14 @@ export default {
    },
    login(){
      let self = this;
-     axios.post(`http://localhost:3000/users/login`,{
+     axios.post(`http://localhost:3000/user/login`,{
        username: self.username,
        password: self.password
      })
      .then(response=>{
        localStorage.setItem('user',response.data)
+       this.$router.push(`/`)
+       alert(`login Success!`)
      })
      .catch(err=>{
        alert(`Invalid Username or Password`)
@@ -114,13 +116,15 @@ export default {
    },
    signup(){
      let self = this;
-     axios.post(`http://localhost:3000/users/signup`,{
+     console.log(`masuk sign`);
+     axios.post(`http://localhost:3000/user/signup`,{
        name: self.name,
        username: self.username,
        password: self.password,
        email: self.email
      })
      .then(response=>{
+       console.log(`masuk then regis`);
        alert(`${self.name} Registered!`)
      })
      .catch(err=>{
