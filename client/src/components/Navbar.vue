@@ -17,7 +17,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/blogs" v-if="isLogin === true">Blogs</router-link></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><p class="navbar-text">Already have an account?</p></li> -->
@@ -103,7 +102,7 @@ export default {
      .then(response=>{
        localStorage.setItem('user',JSON.stringify(response.data))
        alert(`login Success!`)
-      window.location = "/"
+       window.location = "/"
      })
      .catch(err=>{
        alert(`Invalid Username or Password`)
@@ -126,6 +125,7 @@ export default {
      .then(response=>{
        console.log(`masuk then regis`);
        alert(`${self.name} Registered!`)
+       location.reload()
      })
      .catch(err=>{
        console.log(err);

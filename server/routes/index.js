@@ -12,9 +12,9 @@ router.get('/list',Blogs.listBlogs)
 router.get('/blog/:id',Blogs.getOneBlog)
 router.get('/user/:id',Blogs.getUserBlogs)
 router.post('/createBlog',Blogs.createBlog)
-router.put('/updateBlog',Blogs.updateBlog)
+router.put('/updateBlog/:id',Blogs.updateBlog)
 router.delete('/:id',Blogs.deleteBlog)
-router.get('/blog/:category',Blogs.categoryBlog)
+router.get('/blog/cat/:category',Blogs.categoryBlog)
 router.get('/blog/creator/:creator',Blogs.authorBlog)
 
 module.exports = router;
