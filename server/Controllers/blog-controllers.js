@@ -7,6 +7,8 @@ function createBlog (req,res){
     category: req.body.category,
     creator: req.body.creator,
     user_id: req.body.user_id
+  },function(err,result){
+    res.send(result)
   })
 }
 
@@ -20,6 +22,8 @@ function updateBlog (req,res){
       title: req.body.title || result.title,
       content: req.body.content || result.content,
       category: req.body.category || result.category
+    },function(err,result){
+      res.send(`update sukses!`)
     })
   })
 }
@@ -54,6 +58,22 @@ function listBlogs (req,res){
   })
 }
 
+function categoryBlog(req,res){
+  Blogs.find({
+    category: req.params.category
+  },function(err,result){
+    res.send(result)
+  })
+}
+
+function authorBlog(req,res){
+  Blogs.find({
+    creator: req.params.creator
+  },function(err,result){
+    res.send(result)
+  })
+}
+
 module.exports = {
-  listBlogs,getOneBlog,getUserBlogs,deleteBlog,updateBlog,createBlog
+  listBlogs,getOneBlog,getUserBlogs,deleteBlog,updateBlog,createBlog,categoryBlog,authorBlog
 }

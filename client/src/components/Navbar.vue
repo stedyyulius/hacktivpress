@@ -101,9 +101,9 @@ export default {
        password: self.password
      })
      .then(response=>{
-       localStorage.setItem('user',response.data)
-       this.$router.push(`/`)
+       localStorage.setItem('user',JSON.stringify(response.data))
        alert(`login Success!`)
+      window.location = "/"
      })
      .catch(err=>{
        alert(`Invalid Username or Password`)
@@ -112,7 +112,7 @@ export default {
    logout(){
      localStorage.clear()
      this.isLogin = false
-     this.$router.push('/')
+     window.location = "/"
    },
    signup(){
      let self = this;

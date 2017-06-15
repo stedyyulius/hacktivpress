@@ -14,13 +14,23 @@ export const store = new Vuex.Store({
     },
     changeLoginStatus(state){
       return state.isLogin
+    },
+    addBlog(state,data){
+      state.blogs.push(data)
     }
   },
   mutations:{
     changeLoginStatus(state,status){
       state.isLogin = status
-  },
+  }
+},
   actions:{
-  
+    // createBlog({commit},payload){
+    //   axios.post(`http://localhost:3000/createBlog`,payload){
+    //     .then(response=>{
+    //       commit('addBlog',response.data)
+    //     })
+    //   }
+    // }
   }
 })
