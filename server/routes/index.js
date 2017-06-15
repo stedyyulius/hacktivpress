@@ -4,8 +4,8 @@ const Users = require('../Controllers/user-controllers')
 const Blogs = require('../Controllers/blog-controllers')
 
 /* GET home page. */
-router.post('/signup',Users.signup)
-router.post('/login',Users.login)
+router.post('/users/signup',Users.signup)
+router.post('/users/login',Users.login)
 
 router.get('/list',Blogs.listBlogs)
 router.get('/:id',Blogs.getOneBlog)
