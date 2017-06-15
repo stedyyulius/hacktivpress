@@ -99,7 +99,6 @@ export default {
         axios.get(`http://localhost:3000/blog/cat/${category}`)
         .then(response=>{
           self.blogs = response.data
-          console.log(response.data);
         })
         .catch(err=>{
           console.log(err);
@@ -115,7 +114,6 @@ export default {
         })
       }
       else if(!category && !author){
-        console.log(`masuk else`);
       axios.get(`http://localhost:3000/list`)
         .then(response=>{
           self.blogs = response.data
